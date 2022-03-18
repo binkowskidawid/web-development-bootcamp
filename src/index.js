@@ -1,24 +1,24 @@
 function getQuotes() {
-  fetch("https://type.fit/api/quotes")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (quotes) {
-      const randomQuote = Math.floor(Math.random() * quotes.length) + 1;
-      // console.log(quotes[randomQuote]);
-      const quoteText = quotes[randomQuote].text;
-      const quoteAuthor =
-        quotes[randomQuote].author !== null
-          ? quotes[randomQuote].author
-          : "Author unknown";
+	fetch("https://type.fit/api/quotes")
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (quotes) {
+			const randomQuote = Math.floor(Math.random() * quotes.length) + 1;
+			// console.log(quotes[randomQuote]);
+			const quoteText = quotes[randomQuote].text;
+			const quoteAuthor =
+				quotes[randomQuote].author !== null
+					? quotes[randomQuote].author
+					: "Author unknown";
 
-      document.getElementById("app").innerHTML = `
+			document.getElementById("app").innerHTML = `
       <div class="h-screen bg-center bg-cover bg-[url('https://cdn.pixabay.com/photo/2019/06/12/21/10/ocean-4270251_960_720.jpg')] flex flex-col items-center justify-center">
       <h1 class="py-6 text-center text-3xl md:text-5xl font-bold text-white">${quoteText}</h1>
       <p class="py-2 text-center text-white">${quoteAuthor}</p>
       </div>
       `;
-    });
+		});
 }
 
 getQuotes();
@@ -211,6 +211,23 @@ getQuotes();
 // console.log(fibbonaciSequence(6));
 
 /////////////////////////////////////////////////////
+
+//CONSTRUCTOR FUNCTION
+
+//FACTORY PATTERN
+
+// function HouseKeeper(yearsOfExperience, name, age, cleaningRepertoire) {
+// 	this.yearsOfExperience = yearsOfExperience;
+// 	this.name = name;
+// 	this.age = age;
+// 	this.cleaningRepertoire = cleaningRepertoire;
+// }
+
+// const kate = new HouseKeeper(11, "Kate", 29, ["bathroom", "lobby", "bedroom"]);
+// const marta = new HouseKeeper(8, "Marta", 29, ["dining room", "bedroom"]);
+
+// console.log(kate, marta);
+// console.log(kate.cleaningRepertoire);
 
 /////////////////////////////////////////////////////
 
